@@ -157,7 +157,7 @@ function filterTemplate() {
         }
         return false;
     })
-    console.log(filteredArray);
+    generateTemplate(filteredArray)//Rigeneriamo il template col nuovo array
 
 }
 
@@ -170,7 +170,6 @@ function filterTemplate() {
 function init() {
     generateTemplate(icons);
     const selector = document.querySelector("select");
-
     selector.addEventListener("change", filterTemplate);
 
 
