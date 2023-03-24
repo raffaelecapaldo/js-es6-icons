@@ -1,10 +1,9 @@
+//Si ringrazia: https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-11.php
 function randomHex() {
-    let n = (Math.random() * 0xfffff * 1000000).toString(16);
-    return '#' + n.slice(0, 6);
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);//Genera un numero casuale tra 0 e 1 con Math.random, moltiplicalo per il max valore esadecimale possibile e a sua volta moltiplicalo per un
+    //numero abbastanza grande da permettere di avere un'ampia scelta di colori abbastanza unici nella propria pagina, converti poi il numero in una stringa base 16 (esadecimale)
+    return '#' + n.slice(0, 6);//Ritorna # (simbolo per scrivere un hex in css), + la stringa precedente di max lunghezza 6 (quindi taglia la stringa da indice 0 per lunghezza 6)
 }
-
-
-
 
 const icons = [
     {
@@ -192,14 +191,11 @@ function generateSelector() {
 
 }
 
-
-
-
 function init() {
-    generateSelector();
-    generateTemplate(icons);
+    generateSelector();//Genera la select
+    generateTemplate(icons);//Genera il template con l'array di objects icons
     const selector = document.querySelector("select");
-    selector.addEventListener("change", filterTemplate);
+    selector.addEventListener("change", filterTemplate);//Al cambio di value in select, esegui filterTemplate
 
 
 }
