@@ -122,7 +122,7 @@ function generateTemplate(icons) {
     const iTag = document.createElement("i");
     const iconTitle = document.createElement("p");
     row.classList.add("row", "pt-4", "d-flex")
-    col.classList.add("col-5row", "col-lg-3", "col-md-4" ,"col-sm-6", "col-6");
+    col.classList.add("col-5row", "col-lg-3", "col-md-4", "col-sm-6", "col-6");
     card.classList.add("rc-card", "d-flex", "flex-column", "justify-content-center", "align-items-center", "gap-2");
     iconTitle.classList.add("text-uppercase", "fs-6", "fw-bold")
     col.appendChild(card);
@@ -162,12 +162,32 @@ function filterTemplate() {
 }
 
 
+function generateSelector() {
+    const selectorBox = document.querySelector(".selector");
+    const selector = document.createElement("select");
+    selector.classList.add("form-select", "text-uppercase", "rc-select");
+    const all = document.createElement("option");
+    all.selected = true;
+    all.value = all.innerText = "all";
+    selector.appendChild(all);
+    const animal = document.createElement("option");
+    animal.value = animal.innerText = "animal";
+    selector.appendChild(animal);
+    const vegetable = document.createElement("option");
+    vegetable.value = vegetable.innerText = "vegetable";
+    selector.appendChild(vegetable);
+    const user = document.createElement("option");
+    user.value = user.innerText = "user";
+    selector.appendChild(user);
+    selectorBox.appendChild(selector);
 
+}
 
 
 
 
 function init() {
+    generateSelector();
     generateTemplate(icons);
     const selector = document.querySelector("select");
     selector.addEventListener("change", filterTemplate);
