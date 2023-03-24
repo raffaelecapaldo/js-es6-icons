@@ -122,7 +122,7 @@ function generateTemplate(icons) {
     const iTag = document.createElement("i");
     const iconTitle = document.createElement("p");
     row.classList.add("row", "pt-4", "d-flex")
-    col.classList.add("col-2");
+    col.classList.add("col-5row", "col-lg-3", "col-md-4" ,"col-sm-6", "col-6");
     card.classList.add("rc-card", "d-flex", "flex-column", "justify-content-center", "align-items-center", "gap-2");
     iconTitle.classList.add("text-uppercase", "fs-6", "fw-bold")
     col.appendChild(card);

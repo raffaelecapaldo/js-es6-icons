@@ -19,3 +19,10 @@ nav {
 .rc-select {
     width: 140px;
 }
+
+
+@media screen and (min-width:1200px){
+.col-5row {
+    flex: 0 0 auto;
+    width: 20%;
+}}
