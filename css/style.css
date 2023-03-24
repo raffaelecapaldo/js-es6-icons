@@ -1,24 +1,20 @@
-.rc-card {
-    padding-top:20px;
-    margin-bottom:90px;
-    border-radius:10px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 8px;
-    background-color: white;
-}
-    
 
-main {
+body {
     background-color: #dddddd;
 }
 
+header {
+    background-color: white;
+}
+
 header h1 {
-    color:#29b1dd;
+    color: #29b1dd;
     font-family: cursive;
-    font-size:2.6rem;
+    font-size: 2.6rem;
 }
 
 nav {
-    background-color:#29b1dd;
+    background-color: #29b1dd;
 }
 
 .rc-select {
@@ -26,9 +22,18 @@ nav {
 }
 
 
-@media screen and (min-width:1200px){
-.col-5row {
-    flex: 0 0 auto;
-    width: 20%;
-}}
+.rc-card {
+    padding-top: 20px;
+    margin-bottom: 90px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 8px;
+    background-color: white;
+}
 
+
+@media screen and (min-width:1200px) {
+    .col-5row {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
