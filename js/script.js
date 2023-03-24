@@ -121,7 +121,7 @@ function generateTemplate(icons) {
     const cardBody = document.createElement("div");
     const iTag = document.createElement("i");
     const iconTitle = document.createElement("p");
-    row.classList.add("row", "d-flex")
+    row.classList.add("row", "pt-4", "d-flex")
     col.classList.add("col-2");
     card.classList.add("rc-card", "d-flex", "flex-column", "justify-content-center", "align-items-center", "gap-2");
     iconTitle.classList.add("text-uppercase", "fs-6", "fw-bold")
