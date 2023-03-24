@@ -11,6 +11,10 @@ main {
     background-color: #dddddd;
 }
 
+header h1 {
+    color:#29b1dd;
+    font-family: cursive;
+}
 
 nav {
     background-color:#29b1dd;
@@ -26,3 +30,4 @@ nav {
     flex: 0 0 auto;
     width: 20%;
 }}
+
