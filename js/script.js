@@ -170,29 +170,22 @@ function filterTemplate() {
 
 
 
-function generateSelector() {
+function generateSelection(options) {
     const selectorBox = document.querySelector(".selector");
     const selector = document.createElement("select");
-    selector.classList.add("form-select", "text-uppercase", "rc-select");
-    const all = document.createElement("option");
-    all.selected = true;
-    all.value = all.innerText = "all";
-    selector.appendChild(all);
-    const animal = document.createElement("option");
-    animal.value = animal.innerText = "animal";
-    selector.appendChild(animal);
-    const vegetable = document.createElement("option");
-    vegetable.value = vegetable.innerText = "vegetable";
-    selector.appendChild(vegetable);
-    const user = document.createElement("option");
-    user.value = user.innerText = "user";
-    selector.appendChild(user);
+    selector.classList.add("form-select", "rc-select", "text-uppercase");
+    options.forEach(option => {
+        const element = document.createElement("option");
+        element.value = element.innerText = option;
+        selector.appendChild(element);
+    });
     selectorBox.appendChild(selector);
-
 }
 
+
 function init() {
-    generateSelector();//Genera la select
+    const values = ["all", "animal", "vegetable", "user"]
+    generateSelection(values);//Genera la select
     generateTemplate(icons);//Genera il template con l'array di objects icons
     const selector = document.querySelector("select");
     selector.addEventListener("change", filterTemplate);//Al cambio di value in select, esegui filterTemplate
