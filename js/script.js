@@ -1,115 +1,123 @@
+function randomHex() {
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    return '#' + n.slice(0, 6);
+}
+
+
+
+
 const icons = [
     {
         name: 'cat',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'crow',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'dog',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'dove',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'dragon',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'horse',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'hippo',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'fish',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: 'orange'
+        color: randomHex()
     },
     {
         name: 'carrot',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: 'green'
+        color: randomHex()
     },
     {
         name: 'apple-alt',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: 'green'
+        color: randomHex()
     },
     {
         name: 'lemon',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: 'green'
+        color: randomHex()
     },
     {
         name: 'pepper-hot',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: 'green'
+        color: randomHex()
     },
     {
         name: 'user-astronaut',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: 'blue'
+        color: randomHex()
     },
     {
         name: 'user-graduate',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: 'blue'
+        color: randomHex()
     },
     {
         name: 'user-ninja',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: 'blue'
+        color: randomHex()
     },
     {
         name: 'user-secret',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: 'blue'
+        color: randomHex()
     }
 ];
 function generateTemplate(icons) {
@@ -160,6 +168,7 @@ function filterTemplate() {
     generateTemplate(filteredArray)//Rigeneriamo il template col nuovo array
 
 }
+
 
 
 function generateSelector() {
