@@ -122,6 +122,7 @@ const icons = [
 
 function newCategoryColors(icons) {
     const iconColors = {};//Dichiariamo oggetto che conterrà un nuovo colore randomico per ogni categoria trovata dall'array di oggetti principali
+
     icons.forEach(icon => {
         if (!iconColors[icon.type]) {//Se non è già stato assegnato il colore randomico per quella categoria
             iconColors[icon.type] = randomHex();//Assegnalo
@@ -131,7 +132,7 @@ function newCategoryColors(icons) {
 };
 
 function generateTemplate(icons) {
-    newCategoryColors(icons);//Prima di generare il template, assegna i nuovi colori all'array
+
     const maincontent = document.getElementById("maincontent");
     const row = document.createElement("div");
     const col = document.createElement("div");
@@ -196,12 +197,19 @@ function generateSelection(options) {
 
 
 function init() {
+    let assigned = false;
+    if (!assigned) {//Controlla se i colori sono stati cambiati, così da generarli e assegnarli
+        //solo una volta per refresh della pagina e non quando si cambia categoria
+    newCategoryColors(icons);
+    assigned = true;
+    }
     const values = ["all", "animal", "vegetable", "user"]
     generateSelection(values);//Genera la select
     generateTemplate(icons);//Genera il template con l'array di objects icons
     const selector = document.querySelector("select");
     selector.addEventListener("change", filterTemplate);//Al cambio di value in select, esegui filterTemplate
-
+    
+    
 
 
 }
