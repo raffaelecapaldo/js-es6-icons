@@ -11,116 +11,127 @@ const icons = [
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'crow',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'dog',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'dove',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'dragon',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'horse',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'hippo',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'fish',
         prefix: 'fa-',
         type: 'animal',
         family: 'solid',
-        color: randomHex()
+        color: 'orange'
     },
     {
         name: 'carrot',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: randomHex()
+        color: 'green'
     },
     {
         name: 'apple-alt',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: randomHex()
+        color: 'green'
     },
     {
         name: 'lemon',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: randomHex()
+        color: 'green'
     },
     {
         name: 'pepper-hot',
         prefix: 'fa-',
         type: 'vegetable',
         family: 'solid',
-        color: randomHex()
+        color: 'green'
     },
     {
         name: 'user-astronaut',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: randomHex()
+        color: 'blue'
     },
     {
         name: 'user-graduate',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: randomHex()
+        color: 'blue'
     },
     {
         name: 'user-ninja',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: randomHex()
+        color: 'blue'
     },
     {
         name: 'user-secret',
         prefix: 'fa-',
         type: 'user',
         family: 'solid',
-        color: randomHex()
+        color: 'blue'
     }
 ];
-function generateTemplate(icons) {
 
+function newCategoryColors(icons) {
+    const iconColors = {};//Dichiariamo oggetto che conterrà un nuovo colore randomico per ogni categoria trovata dall'array di oggetti principali
+    icons.forEach(icon => {
+        if (!iconColors[icon.type]) {//Se non è già stato assegnato il colore randomico per quella categoria
+            iconColors[icon.type] = randomHex();//Assegnalo
+        }
+        icon.color = iconColors[icon.type]; //Assegna il colore corrispondente alla categoria nell'array principale
+    })
+};
+
+function generateTemplate(icons) {
+    newCategoryColors(icons);//Prima di generare il template, assegna i nuovi colori all'array
     const maincontent = document.getElementById("maincontent");
     const row = document.createElement("div");
     const col = document.createElement("div");
@@ -179,8 +190,9 @@ function generateSelection(options) {
         element.value = element.innerText = option;
         selector.appendChild(element);
     });
-    selectorBox.appendChild(selector);
+    selectorBox.appendChild(selector)
 }
+
 
 
 function init() {
@@ -189,6 +201,7 @@ function init() {
     generateTemplate(icons);//Genera il template con l'array di objects icons
     const selector = document.querySelector("select");
     selector.addEventListener("change", filterTemplate);//Al cambio di value in select, esegui filterTemplate
+
 
 
 }
