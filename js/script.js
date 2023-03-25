@@ -202,12 +202,6 @@ const icons = [
         family: 'solid',
     },
     {
-        name: 'keyboard',
-        prefix: 'fa-',
-        type: 'code',
-        family: 'solid',
-    },
-    {
         name: 'tired',
         prefix: 'fa-',
         type: 'emoji',
